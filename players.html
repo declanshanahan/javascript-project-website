@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arsenal Football Club</title>
+    <link rel="stylesheet" href="players-stylesheet.css" type="text/css">
+</head>
+<body>
+    <header>
+        <img src="arsenal-logo-2.png" alt="Arsenal FC Logo">
+        <h1>Arsenal Football Club</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="players.html">Players</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="league-table.html">League Table</a></li>
+        </ul>
+    </nav>
+
+    <section id="players">
+        <h2>Arsenal Squad</h2>
+
+        <div id="goalkeepers">
+            <h3>Goalkeepers</h3>
+            <ul>
+                <li>David Raya</li>
+                <li>Aaron Ramsdale</li>
+                <li>Karl Hein</li>
+            </ul>
+        </div>
+        <div id="defenders">
+            <h3>Defenders</h3>
+            <ul>
+                <li>William Saliba</li>
+                <li>Gabriel</li>
+                <li>Ben White</li>
+                <li>Jakub Kiwior</li>
+                <li>Cedric</li>
+                <li>Takehiro Tomiyasu</li>
+                <li>Jurrien Timber</li>
+                <li>Oleksandr Zinchenko</li>
+            </ul>
+        </div>
+        <div id="midfielders">
+            <h3>Midfielders</h3>
+            <ul>
+                <li>Thomas Partey</li>
+                <li>Martin Odegaard</li>
+                <li>Mohamed Elneny</li>
+                <li>Emile Smith Rowe</li>
+                <li>Kai Havertz</li>
+                <li>Declan Rice</li>
+                <li>Jorginho</li>
+                <li>Fabio Vieira</li>
+            </ul>
+        </div>
+        <div id="forwards">
+            <h3>Forwards</h3>
+            <ul>
+                <li>Bukayo Saka</li>
+                <li>Gabriel Jesus</li>
+                <li>Leandro Trossard</li>
+                <li>Gabriel Martinelli</li>
+                <li>Eddie Nketiah</li>
+                <li>Reiss Nelson</li>
+            </ul>
+        </div>
+        <div id="on loan">
+            <h3>On Loan</h3>
+            <ul>
+                <li>Runar Alex Runarsson</li>
+                <li>Arthur Okonkwo</li>
+                <li>Leandro Trossard</li>
+                <li>Kieran Tierney</li>
+                <li>Nuno Taveres</li>
+                <li>Albert Sambi Lokonga</li>
+                <li>Marquinhos</li>
+            </ul>
+        </div>
+
+        <div id="player-form">
+            <h3>Player Statistics</h3>
+            <form action="#" method="post">
+                <label for="player">Player Profile:</label>
+                <select id="player" name="player">
+                    <option value="oleksandr-zinchenko">Oleksandr Zinchenko</option>
+                    <option value="bukayo-saka">Bukayo Saka</option>
+                    <option value="leandro-trossard">Leandro Trossard</option>
+                    <option value="william-saliba">William Saliba</option>
+                </select>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div id="player-stats-container">
+            <p id="player-goals"></p>
+            <p id="player-assists"></p>
+            <p id="player-appearances"></p>
+        </div>
+    </section>
+
+    <ul id="player-stats" style="display:none;">
+        <li data-player="bukayo-saka" data-goals="10" data-assists="5" data-appearances="20"></li>
+        <li data-player="oleksandr-zinchenko" data-goals="5" data-assists="8" data-appearances="25"></li>
+        <li data-player="leandro-trossard" data-goals="12" data-assists="7" data-appearances="28"></li>
+        <li data-player="william-saliba" data-goals="2" data-assists="1" data-appearances="20"></li>
+    </ul>
+
+    <script>
+        function displayPlayerStats(playerName) {
+            var playerGoals, playerAssists, playerAppearances;
+            
+            switch(playerName) {
+                case "oleksandr-zinchenko":
+                    playerGoals = 5;
+                    playerAssists = 8;
+                    playerAppearances = 25;
+                    break;
+                case "bukayo-saka":
+                    playerGoals = 10;
+                    playerAssists = 5;
+                    playerAppearances = 20;
+                    break;
+                case "leandro-trossard":
+                    playerGoals = 12;
+                    playerAssists = 7;
+                    playerAppearances = 28;
+                    break;
+                case "william-saliba":
+                    playerGoals = 2;
+                    playerAssists = 1;
+                    playerAppearances = 20;
+                    break;
+                default:
+                    playerGoals = 0;
+                    playerAssists = 0;
+                    playerAppearances = 0;
+            }
+
+            document.getElementById("player-goals").textContent = "Goals: " + playerGoals;
+            document.getElementById("player-assists").textContent = "Assists: " + playerAssists;
+            document.getElementById("player-appearances").textContent = "Appearances: " + playerAppearances;
+        }
+
+        document.getElementById("player-form").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            var selectedPlayer = document.getElementById("player").value;
+            displayPlayerStats(selectedPlayer);
+        });
+    </script>
+
+    <footer>
+        <p>Click the link below to visit the official website of Arsenal Football Club</p>
+        <a href="https://www.arsenal.com/" target="_blank">Arsenal Football Club</a>
+    </footer>
+</body>
+</html>

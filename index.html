@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Official website of Arsenal Football Club">
+    <title>Arsenal FC</title>
+
+    <link rel="stylesheet" href="arsenal-stylesheet.css" type="text/css">
+</head>
+
+<body>
+    <header>
+        <img src="arsenal-logo-2.png" alt="Arsenal FC Logo">
+        <h1>Arsenal Football Club</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="Arsenal-FC-Homepage.html">Home</a></li>
+            <li><a href="players.html">Players</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="league-table.html">League Table</a></li>
+        </ul>
+    </nav>
+    <section id="featured-content">
+        <h2>Club Honours</h2>
+        <br></br>
+        <p>Arsenal's honors include multiple English League titles, FA Cups, League Cups, and notable successes in European competitions. The club has consistently been a force to be reckoned with on the football stage, with a trophy cabinet that reflects its commitment to excellence.</p>
+        <br></br>
+        <ul>
+            <li>English Premier League/First Division Titles: 13</li>
+            <li>FA Cup Wins: 14</li>
+            <li>League Cup Triumphs: 2</li>
+        </ul>
+    </section>
+    <section id="slider">
+        <h2>Featured Products</h2>
+        <div class="slider-container">
+            <div class="slider-content">
+                <div class="slide">
+                    <div class="product">
+                        <img src="arsenal-23-24-shirt.jpg" alt="Arsenal Home Shirt">
+                        <h3>Arsenal Home Shirt</h3>
+                        <p>$50</p>
+                        <button class="buy-button">Buy Now</button>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="product">
+                        <img src="arsenal-23-24-away-shirt.jpg" alt="Arsenal Away Shirt">
+                        <h3>Arsenal Away Shirt</h3>
+                        <p>$50</p>
+                        <button class="buy-button">Buy Now</button>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="product">
+                        <img src="arsenal-23-24-hoodie.jpg" alt="Arsenal Hoodie">
+                        <h3>Arsenal Hoodie</h3>
+                        <p>$40</p>
+                        <button class="buy-button">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            <button class="prev" onclick="moveSlider(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlider(1)">&#10095;</button>
+        </div>
+    </section>
+    <section id="results-and-fixtures">
+        <h2>Results and Fixtures</h2>
+        <div class="fixture">
+            <p>Latest Result: Arsenal 5-0 Burnley</p>
+            <p>Next Fixture: Porto vs Arsenal - 21/02/2024 at 17:30</p>
+        </div>
+    </section>
+    <section id="club-details">
+        <h2>Club Details</h2>
+
+        <h3>Current Manager</h3>
+        <p><br></br><img src="mikel arteta.png" alt="Mikel Arteta"></a><br></br>Mikel Arteta</p>
+        <br></br>
+        <h3>Current Owner</h3>
+        <p>Kroenke Sports & Entertainment</p>
+        <br></br>
+        <h3>Current Stadium</h3>
+        <p><br></br><img src="emirates-stadium.jpg" alt="Emirates Stadium"></a><br></br> Emirates Stadium</p>
+        <br></br>
+        <h3>Stadium Capacity</h3>
+        <p>60,704</p>
+    </section>
+    <section id="Contact Us">
+        <h2>Contact Us</h2>
+        <p>If you have any inquiries or need assistance with tickets, please <a href="mailto:ticketing@arsenal.com?subject=Ticket%20Inquiry&body=Hello%20Arsenal%20Team,">email us</a>.</p>
+    <br></br>
+    <br></br>
+    </section>
+    <footer>
+        <p>Click the link below to visit the official website of Arsenal Football Club</p>
+        <a href="https://www.arsenal.com/" target="_blank">Arsenal Football Club</a>
+    </footer>
+    <script>
+        let slideIndex = 0;
+
+function moveSlider(n) {
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    slideIndex += n;
+
+    if (slideIndex >= totalSlides) {
+        slideIndex = 0;
+    } else if (slideIndex < 0) {
+        slideIndex = totalSlides - 1;
+    }
+
+    const translateValue = -slideIndex * 100;
+    document.querySelector('.slider-content').style.transform = `translateX(${translateValue}%)`;
+}
+
+setInterval(function() {
+    moveSlider(1);
+}, 5000);
+    </script>
+</body>
+
+</html>
